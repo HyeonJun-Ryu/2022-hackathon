@@ -19,6 +19,6 @@
 
 ## 프로젝트에 활용된 기술 (3가지 이내)
 
-- React 활용 / Node.js 활용 / 
+- React 활용 / Node.js 활용 / Dialogflow api 적용
 
 ## 시연 영상
