@@ -11,7 +11,8 @@
     "start": "node index.js",
     "backend": "nodemon index.js",
     "frontend": "npm run front --prefix client",
-    "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\""
+    "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\"",
+    ""
   },
   "author": "HyeonJun Ryu",
   "license": "ISC",
