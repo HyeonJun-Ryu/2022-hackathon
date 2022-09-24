@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="app.js"></script>
+    <script>
+        let key = "eVH%2BicBkGAKdXyNzKtOpFh6NioL1VfVJIjI0dqNc6OTpMhTeOknmcjjkW3HOFRUNK7qXYaGpIC7c42JRLEtsdQ%3D%3D";
+        let departureId = "NAT010000";
+        let arrPlaceId = "NAT011668";
+        let depPlandTime = "20220924";
+        let trainGradeCode = "00"
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey='+key+'&depPlaceId='+departureId+'&arrPlaceId='+arrPlaceId+'8&depPlandTime='+depPlandTime+'&trainGradeCode='+trainGradeCode+'&numOfRows=20&pageNo=1&_type=xml', //통신을 원하는 URL주소를 입력합니다
+                type: 'GET', //통신 방식을 지정합니다
+                dataType: 'xml',//서버로부터 받을 데이터 타입을 입력합니다.
+                success: function (response) { // 통신 성공시 호출해야할 함수
+                    console.log(response);
+                    xmlParsing(response);
+                },
+                error: function (xhr, status, msg) { // 통신 실패시 호출해야하는 함수
+                    console.log('상태값 : ' + status + ' Http에러메시지 : ' + msg);
+                },
+            });
+
+            function xmlParsing(data) {
+                var infoList = ``;
+                $(data).find('item').each(function(index, item){
+                    console.log(item)
+                    infoList += `
+				<tr>
+					<td>${$(this).find('adultcharge').text()}</td>
+					<td>${$(this).find('arrplacename').text()}</td>
+					<td>${$(this).find('arrplandtime').text()}</td>
+					<td>${$(this).find('depplacename').text()}</td>
+					<td>${$(this).find('depplandtime').text()}</td>
+					<td>${$(this).find('traingradename').text()}</td>
+					<td>${$(this).find('trainno').text()}</td>
+				</tr>
+			`;
+                    $('#info').empty().append(infoList);
+                    $('tr:first').css('background', 'darkgray').css('color', 'white')
+                });
+            }
+        });
+    </script>
+
+    <h3>공공데이터 XML 파싱</h3>
+    <button id="listBtn">기차</button>
+    <table>
+        <tr>
+            <th>adultcharge</th>
+            <th>arrplacename</th>
+            <th>arrplandtime</th>
+            <th>depplacename</th>
+            <th>depplandtime</th>
+            <th>traingradename</th>
+            <th>trainno</th>
+        </tr>
+        <tbody id="info"></tbody>
+    </table>
+</body>
+</html>
