@@ -5,5 +5,5 @@ module.exports = {
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL,
     //googlePrivateKey: JSON.parse(process.env.GOOGLE_PRIVATE_KEY),
     googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY.replace(new RegExp("\\\\n", "\g"), "\n")
-    mongoURI:process.env.MONGO_URI,
+    //mongoURI:process.env.MONGO_URI,
 }
