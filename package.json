@@ -4,8 +4,8 @@
   "description": "chatbot-app",
   "main": "index.js",
   "engines": {
-    "node": "16.7.1",
-    "npm": "8.15.0"
+    "node": "v18.9.1",
+    "npm": "v8.19.1"
   },
   "scripts": {
     "start": "node index.js",
