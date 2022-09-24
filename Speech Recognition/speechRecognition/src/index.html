@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech Application</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=IpsVaOl2"></script>
+
+
+<style>
+  /* google voice */
+  .btnvoice{margin:0;overflow:hidden;position:relative}
+  .btnvoice button.voice-button,.btnvoice button.voice-stop{padding:0 5px;font-size:13px;background:none;outline:0;cursor:pointer}
+  .btnvoice button.voice-button{color:#555;border:none;border-radius:0}
+  .btnvoice button.voice-stop{color:#ff5f02;border:none;border-radius:0}
+</style>
+
+<center>
+  <span class="btnvoice">
+    <h3>Live Demo</h3>
+    <button class="voice-button" onclick="responsiveVoice.speak(document.querySelector('.text-on-voice').textContent, 'Korean Female');" title="Play"><i aria-hidden="true" class="far fa-play-circle"></i> Voice</button>
+    <button class="voice-stop" onclick="responsiveVoice.cancel();"  title="Stop"><i aria-hidden="true" class="far fa-stop-circle"></i> Stop</button>
+  </span>
+</center>
+
+<div class="text-on-voice">
+  <div class="words"></div>
+  <script src="app.js"></script>
+  <!--이곳에 텍스트를 입력하세요. 텍스트가 있는 영역의 class 명과 document.querySelector의 class 명이 동일 하지 않다면 음성안내 기능이 동작하지 않습니다.-->
+</div>
+
+
+
+
+
+</body>
+</html>
