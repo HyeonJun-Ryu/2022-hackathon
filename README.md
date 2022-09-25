@@ -25,5 +25,3 @@
 
 웹페이지 배포
 https://1b24-175-223-20-228.jp.ngrok.io/
-https://1b24-175-223-20-228.jp.ngrok.io/
-https://1b24-175-223-20-228.jp.ngrok.io/
