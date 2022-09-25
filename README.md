@@ -25,3 +25,4 @@
 
 웹페이지 배포
 https://1b24-175-223-20-228.jp.ngrok.io/
+<img width="793" alt="Screen Shot 2022-09-25 at 4 54 56 PM" src="https://user-images.githubusercontent.com/74097144/192133828-67ce5d0e-4e79-42bb-98d5-07987b3d6af5.png">
